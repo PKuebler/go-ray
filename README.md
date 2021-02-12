@@ -82,3 +82,12 @@ In a Docker container, `host.docker.internal` must be defined as the host.
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+
+# ToDo:
+- add tests
+- message color as definition
+- message size as definition
+- waitgroup go routines to send
+- move disabled more to front
+- move payload code from ray to payloads

@@ -1,5 +1,6 @@
 package payloads
 
+// Trace payload
 type Trace struct {
 	FileName   string
 	LineNumber int
@@ -7,6 +8,7 @@ type Trace struct {
 	MethodName string
 }
 
+// NewTrace payload
 func NewTrace() Trace {
 	return Trace{
 		"filename.go",
@@ -16,10 +18,12 @@ func NewTrace() Trace {
 	}
 }
 
+// GetType of this payload
 func (t Trace) GetType() string {
 	return "trace"
 }
 
+// GetContent from this payload
 func (t Trace) GetContent() map[string]interface{} {
 	return map[string]interface{}{
 		"frames": []map[string]interface{}{
@@ -33,6 +37,7 @@ func (t Trace) GetContent() map[string]interface{} {
 	}
 }
 
+// ModifiesLastMessage by this payload?
 func (t Trace) ModifiesLastMessage() bool {
 	return false
 }

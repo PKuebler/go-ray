@@ -1,10 +1,12 @@
 package payloads
 
+// Custom payload
 type Custom struct {
 	Content string
 	Label   string
 }
 
+// NewCustom payload
 func NewCustom(label string, content string) Custom {
 	return Custom{
 		content,
@@ -12,10 +14,12 @@ func NewCustom(label string, content string) Custom {
 	}
 }
 
+// GetType of this payload
 func (c Custom) GetType() string {
 	return "custom"
 }
 
+// GetContent from this payload
 func (c Custom) GetContent() map[string]interface{} {
 	return map[string]interface{}{
 		"content": c.Content,
@@ -23,6 +27,7 @@ func (c Custom) GetContent() map[string]interface{} {
 	}
 }
 
+// ModifiesLastMessage by this payload?
 func (c Custom) ModifiesLastMessage() bool {
 	return false
 }
