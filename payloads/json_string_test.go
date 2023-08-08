@@ -7,6 +7,8 @@ import (
 )
 
 func TestJSONString(t *testing.T) {
+	t.Parallel()
+
 	testString := "{\"foo\":\"baa\"}"
 
 	var payload Payload

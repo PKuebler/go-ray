@@ -7,6 +7,8 @@ import (
 )
 
 func TestLog(t *testing.T) {
+	t.Parallel()
+
 	testValues := []interface{}{
 		"my custom log",
 		false,

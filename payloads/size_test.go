@@ -7,6 +7,8 @@ import (
 )
 
 func TestSize(t *testing.T) {
+	t.Parallel()
+
 	testFontSize := "lg"
 
 	var payload Payload

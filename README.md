@@ -1,6 +1,6 @@
 # Ray `WIP`
 
-This package can be used to send messages to the [Ray app](https://myray.app/).
+This package can be used to send messages to the [Ray app](https://myray.app/) or [buggregator](https://buggregator.dev/).
 
 ## Usage
 

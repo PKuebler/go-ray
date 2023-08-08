@@ -7,6 +7,8 @@ import (
 )
 
 func TestHideApp(t *testing.T) {
+	t.Parallel()
+
 	var payload Payload
 	payload = NewHideApp()
 

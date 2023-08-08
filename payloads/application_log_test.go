@@ -7,6 +7,7 @@ import (
 )
 
 func TestApplicationLog(t *testing.T) {
+	t.Parallel()
 	testString := "my custom log"
 
 	var payload Payload

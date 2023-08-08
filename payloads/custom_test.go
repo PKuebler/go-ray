@@ -7,6 +7,8 @@ import (
 )
 
 func TestCustom(t *testing.T) {
+	t.Parallel()
+
 	testContent := "my custom content"
 	testLabel := "my test label"
 

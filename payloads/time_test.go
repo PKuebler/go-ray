@@ -8,6 +8,8 @@ import (
 )
 
 func TestTime(t *testing.T) {
+	t.Parallel()
+
 	testTime := time.Now()
 
 	var payload Payload

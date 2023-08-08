@@ -13,6 +13,8 @@ type TestJsonStruct struct {
 }
 
 func Test(t *testing.T) {
+	t.Parallel()
+
 	entry := NewRayEntry(DefaultClient, "")
 	//	entry.WithColor("green").Notify("huhu")
 	entry.NewScreen("my screen")

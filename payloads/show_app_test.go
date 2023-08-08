@@ -7,6 +7,8 @@ import (
 )
 
 func TestShowApp(t *testing.T) {
+	t.Parallel()
+
 	var payload Payload
 	payload = NewShowApp()
 

@@ -7,6 +7,8 @@ import (
 )
 
 func TestColor(t *testing.T) {
+	t.Parallel()
+
 	testString := "red"
 
 	var payload Payload

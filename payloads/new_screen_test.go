@@ -7,6 +7,8 @@ import (
 )
 
 func TestNewScreen(t *testing.T) {
+	t.Parallel()
+
 	testString := "my screen name"
 
 	var payload Payload

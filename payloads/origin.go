@@ -3,7 +3,7 @@ package payloads
 // Origin of file
 type Origin struct {
 	File       string `json:"file"`
-	LineNumber int    `json:"line_number"`
+	LineNumber int    `json:"line_number"` //nolint:tagliatelle
 }
 
 // NewOrigin creates a origin

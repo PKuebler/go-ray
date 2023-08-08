@@ -7,6 +7,8 @@ import (
 )
 
 func TestHTML(t *testing.T) {
+	t.Parallel()
+
 	testString := "<a href=\"#\">MyLink</a>"
 
 	var payload Payload

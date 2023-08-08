@@ -7,6 +7,8 @@ import (
 )
 
 func TestNotify(t *testing.T) {
+	t.Parallel()
+
 	testString := "my custom notification"
 
 	var payload Payload

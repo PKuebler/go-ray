@@ -7,6 +7,8 @@ import (
 )
 
 func TestCreateLock(t *testing.T) {
+	t.Parallel()
+
 	testString := "myName"
 
 	var payload Payload

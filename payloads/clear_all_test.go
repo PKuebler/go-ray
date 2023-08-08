@@ -7,6 +7,8 @@ import (
 )
 
 func TestClearAll(t *testing.T) {
+	t.Parallel()
+
 	var payload Payload
 	payload = NewClearAll()
 

@@ -7,6 +7,8 @@ import (
 )
 
 func TestImage(t *testing.T) {
+	t.Parallel()
+
 	testPath := "https://localhost/image.png"
 
 	var payload Payload

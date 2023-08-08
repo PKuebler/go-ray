@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"html"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/http/httputil"
 	"reflect"
@@ -13,7 +12,7 @@ import (
 	"strings"
 
 	"github.com/google/uuid"
-	"gitlab.com/pkuebler/go-ray/payloads"
+	"github.com/pkuebler/go-ray/payloads"
 )
 
 // RayEntry is the final or intermediate ray entry. It contains color, size and
@@ -273,7 +272,7 @@ func (r *RayEntry) Request(req *http.Request) *RayEntry {
 
 // Reader dump e.g. request response body
 func (r *RayEntry) Reader(reader io.Reader) *RayEntry {
-	bodyBytes, err := ioutil.ReadAll(reader)
+	bodyBytes, err := io.ReadAll(reader)
 	if err != nil {
 		payload := payloads.NewCustom("Reader", err.Error())
 
@@ -289,7 +288,7 @@ func (r *RayEntry) Reader(reader io.Reader) *RayEntry {
 
 // format escapes the string and converts line breaks to html.
 func (r *RayEntry) format(s string) string {
-	s = html.EscapeString(string(s))
+	s = html.EscapeString(s)
 	return strings.ReplaceAll(s, "\n", "<br />")
 }
 
