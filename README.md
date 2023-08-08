@@ -1,4 +1,4 @@
-# Ray `WIP`
+# Ray [![codecov](https://codecov.io/gh/PKuebler/go-ray/branch/main/graph/badge.svg?token=DS6Y27JNTN)](https://codecov.io/gh/PKuebler/go-ray)
 
 This package can be used to send messages to the [Ray app](https://myray.app/) or [buggregator](https://buggregator.dev/).
 
