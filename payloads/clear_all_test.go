@@ -9,8 +9,8 @@ import (
 func TestClearAll(t *testing.T) {
 	t.Parallel()
 
-	var payload Payload
-	payload = NewClearAll()
+	payload := NewClearAll()
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "clear_all", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

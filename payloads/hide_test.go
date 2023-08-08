@@ -9,8 +9,8 @@ import (
 func TestHide(t *testing.T) {
 	t.Parallel()
 
-	var payload Payload
-	payload = NewHide()
+	payload := NewHide()
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "hide", payload.GetType())
 	assert.True(t, payload.ModifiesLastMessage())

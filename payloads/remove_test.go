@@ -9,8 +9,8 @@ import (
 func TestRemove(t *testing.T) {
 	t.Parallel()
 
-	var payload Payload
-	payload = NewRemove()
+	payload := NewRemove()
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "remove", payload.GetType())
 	assert.True(t, payload.ModifiesLastMessage())

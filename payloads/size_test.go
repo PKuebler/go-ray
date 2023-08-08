@@ -11,8 +11,8 @@ func TestSize(t *testing.T) {
 
 	testFontSize := "lg"
 
-	var payload Payload
-	payload = NewSize(testFontSize)
+	payload := NewSize(testFontSize)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "size", payload.GetType())
 	assert.True(t, payload.ModifiesLastMessage())

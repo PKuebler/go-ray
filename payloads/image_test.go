@@ -11,8 +11,8 @@ func TestImage(t *testing.T) {
 
 	testPath := "https://localhost/image.png"
 
-	var payload Payload
-	payload = NewImage(testPath)
+	payload := NewImage(testPath)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "custom", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

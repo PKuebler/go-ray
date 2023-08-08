@@ -11,8 +11,8 @@ func TestColor(t *testing.T) {
 
 	testString := "red"
 
-	var payload Payload
-	payload = NewColor(testString)
+	payload := NewColor(testString)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "color", payload.GetType())
 	assert.True(t, payload.ModifiesLastMessage())

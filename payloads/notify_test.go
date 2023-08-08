@@ -11,8 +11,8 @@ func TestNotify(t *testing.T) {
 
 	testString := "my custom notification"
 
-	var payload Payload
-	payload = NewNotify(testString)
+	payload := NewNotify(testString)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "notify", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

@@ -9,8 +9,8 @@ import (
 func TestShowApp(t *testing.T) {
 	t.Parallel()
 
-	var payload Payload
-	payload = NewShowApp()
+	payload := NewShowApp()
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "show_app", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

@@ -9,8 +9,8 @@ import (
 func TestBool(t *testing.T) {
 	t.Parallel()
 
-	var payload Payload
-	payload = NewBool(true)
+	payload := NewBool(true)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "custom", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

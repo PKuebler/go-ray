@@ -11,8 +11,8 @@ func TestJSONString(t *testing.T) {
 
 	testString := "{\"foo\":\"baa\"}"
 
-	var payload Payload
-	payload = NewJSONString(testString)
+	payload := NewJSONString(testString)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "json_string", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

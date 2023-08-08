@@ -11,8 +11,8 @@ func TestCreateLock(t *testing.T) {
 
 	testString := "myName"
 
-	var payload Payload
-	payload = NewCreateLock(testString)
+	payload := NewCreateLock(testString)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "create_lock", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

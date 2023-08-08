@@ -12,8 +12,8 @@ func TestCustom(t *testing.T) {
 	testContent := "my custom content"
 	testLabel := "my test label"
 
-	var payload Payload
-	payload = NewCustom(testLabel, testContent)
+	payload := NewCustom(testLabel, testContent)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "custom", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

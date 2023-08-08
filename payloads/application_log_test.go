@@ -10,8 +10,8 @@ func TestApplicationLog(t *testing.T) {
 	t.Parallel()
 	testString := "my custom log"
 
-	var payload Payload
-	payload = NewApplicationLog(testString)
+	payload := NewApplicationLog(testString)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "application_log", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

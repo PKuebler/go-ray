@@ -12,8 +12,8 @@ func TestTime(t *testing.T) {
 
 	testTime := time.Now()
 
-	var payload Payload
-	payload = NewTime(testTime)
+	payload := NewTime(testTime)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "carbon", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

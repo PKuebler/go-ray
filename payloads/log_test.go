@@ -16,8 +16,8 @@ func TestLog(t *testing.T) {
 		uint32(23234),
 	}
 
-	var payload Payload
-	payload = NewLog(testValues)
+	payload := NewLog(testValues)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "log", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

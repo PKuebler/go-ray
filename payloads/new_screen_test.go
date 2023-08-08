@@ -11,8 +11,8 @@ func TestNewScreen(t *testing.T) {
 
 	testString := "my screen name"
 
-	var payload Payload
-	payload = NewScreen(testString)
+	payload := NewScreen(testString)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "new_screen", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())

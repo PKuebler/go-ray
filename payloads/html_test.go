@@ -11,8 +11,8 @@ func TestHTML(t *testing.T) {
 
 	testString := "<a href=\"#\">MyLink</a>"
 
-	var payload Payload
-	payload = NewHTML(testString)
+	payload := NewHTML(testString)
+	assert.Implements(t, (*Payload)(nil), payload)
 
 	assert.Equal(t, "custom", payload.GetType())
 	assert.False(t, payload.ModifiesLastMessage())
