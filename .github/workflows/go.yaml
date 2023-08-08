@@ -37,13 +37,14 @@ jobs:
         run: go version
   
       - name: Build
-        run: go build -v ./payloads/...
+        run: go build -v ./...
 
       - name: Test
-        run: go test -v -race -coverprofile=coverage.out -covermode=atomic ./...
+        run: go test -v -race -coverprofile=coverage.out -covermode=atomic ./payloads/...
 
       - name: Upload coverage reports to Codecov
         if: matrix.go-version == '1.x'
         uses: codecov/codecov-action@v3
         env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}      
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      
